@@ -10,7 +10,9 @@ export const initializing = (context: IDictionary) => () => {
   context.log(computerText);
   context.log(
     chalk.bold(
-      "\nWelcome to the " + chalk.green("TypeScript for Serverless") + " generator!\n"
+      "\nWelcome to the " +
+        chalk.green("TypeScript for Serverless") +
+        " generator!\n]n]n"
     )
   );
 
@@ -28,7 +30,6 @@ export const initializing = (context: IDictionary) => () => {
     )
   );
 };
-
 
 const computerText = `
     ┌──────────────────────┐
