@@ -15,6 +15,7 @@ import { test } from "async-shelljs";
 class Generator extends Base {
   constructor(args: any[], opts: any) {
     super(args, opts);
+    awdawdawd;
   }
 
   public options: IDictionary;
@@ -40,10 +41,7 @@ class Generator extends Base {
   public async end() {
     const git = require("simple-git")(this.destinationPath());
     if (!test("-d", ".git")) {
-      git
-        .init()
-        .add("./*")
-        .commit("initial commit");
+      git.init().add("./*").commit("initial commit");
       this.log(
         `- ${chalk.bold(
           "git"
@@ -52,10 +50,14 @@ class Generator extends Base {
     }
     if (this.answers.repoOrigin) {
       git.addRemote("origin", this.answers.repoOrigin);
-      this.log(`- a repo origin has been added to git of "${this.answers.repoOrigin}" ䷛`);
+      this.log(
+        `- a repo origin has been added to git of "${this.answers.repoOrigin}" ䷛`
+      );
     }
 
-    this.log(yosay(`\n${chalk.bold("Success!")}\nType "yarn run help" for help.`));
+    this.log(
+      yosay(`\n${chalk.bold("Success!")}\nType "yarn run help" for help.`)
+    );
   }
 }
 
